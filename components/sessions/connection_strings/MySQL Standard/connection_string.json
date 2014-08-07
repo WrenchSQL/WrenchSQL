@@ -1,6 +1,9 @@
 {
-	"Server": "myServerAddress",
-	"Database": "myDataBase",
-	"User Id": "myUsername",
-	"Password": "myPassword"
+	"connection_string": {
+		"Server": "myServerAddress",
+		"Database": "myDataBase",
+		"User Id": "myUsername",
+		"Password": "myPassword"
+	},
+	"accessibility_toggle_password_visibility": "Password"
 }

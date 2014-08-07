@@ -11,6 +11,7 @@ class Sessions(Gtk.Builder):
 
 	query_string_form = None
 	query_string_name = 'MySQL Standard'
+	query_string_deff = None;
 
 
 	"""docstring for Sessions"""
@@ -31,7 +32,7 @@ class Sessions(Gtk.Builder):
 			this.liststore_connection_string.append([connection_string])
 		this.combo_connection_string.set_active(0)
 
-		this.query_string_form = this.get_object('query_string_form')
+		this.query_string_form = this
 		this.combo_connection_string_changed(this.combo_connection_string)
 
 
@@ -51,17 +52,22 @@ class Sessions(Gtk.Builder):
 			super(Sessions, this).log_error('Failed to locate combo_connection_string option: ' + this.query_string_name)
 
 		with open(path.join('connection_strings', this.query_string_name, 'connection_string.json')) as query_string_deff:
-			query_string_deff = json.loads(query_string_deff.read())
+			this.query_string_deff = json.loads(query_string_deff.read())
 
 		builder = Gtk.Builder()
 		builder.add_from_file(path.join('connection_strings', this.query_string_name, 'form.glade'))
+		builder.connect_signals(this)
 
+		for field in this.query_string_deff['connection_string']:
+			builder.get_object(field).set_placeholder_text(
+				this.query_string_deff['connection_string'][field]
+			)
 
 		this.replace_widget(
-			this.query_string_form,
+			this.query_string_form.get_object('query_string_form'),
 			builder.get_object('query_string_form')
 		)
-		this.query_string_form = builder.get_object('query_string_form')
+		this.query_string_form = builder
 
 
 	def main_quit(this, *args):
@@ -88,6 +94,18 @@ class Sessions(Gtk.Builder):
 
 		Gtk.Container.remove(container, current)
 		new.reparent(container)
+
+	def test_form(this, widget, data=None):
+		for field in this.query_string_deff['connection_string']:
+			pprint(field)
+			pprint(this.query_string_form.get_object(field).get_text())
+
+	def accessibility_toggle_password_visibility(this, widget, data=None):
+		this.query_string_form.get_object(
+			this.query_string_deff[
+				'accessibility_toggle_password_visibility'
+			]
+		).set_visibility(widget.get_active())
 
 class Session(Sessions):
 	"""Alias for Sessions"""
