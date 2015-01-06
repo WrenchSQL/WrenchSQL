@@ -8,7 +8,7 @@ Sql Client
   - [ ] Single (Defualt)
   - [ ] Entire Buffer (Modifier Key)
   - [ ] Query Logging
-- [ ] Ability to quickly interrupt sql
+- [ ] Ability to quickly interrupt sql (Without prompting for new credentials)
 
 MySQL Editor Features
 ----
