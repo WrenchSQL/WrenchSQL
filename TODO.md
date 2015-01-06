@@ -10,3 +10,7 @@ Sql Client
 - ability to quickly interrupt sql
 	- button
 
+SQL Editor Features
+----
+
+- Automatically Add/Remove commas in Select/Set Statements
