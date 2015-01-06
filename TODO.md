@@ -1,16 +1,18 @@
 Sql Client
-
-- sepcify connection
-	- form
-
-- Ability to write sql
-	- text area
-- ability to execute sql
-	- button
-- ability to quickly interrupt sql
-	- button
-
-SQL Editor Features
 ----
 
-- Automatically Add/Remove commas in Select/Set Statements
+- [ ] Define Connection (dynamic/generated form, from connection string format)
+- [ ] Open & Maintain Connection
+- [ ] Ability to write sql (Scintilla Widget?)
+- [ ] Ability to execute sql
+  - [ ] Single (Defualt)
+  - [ ] Entire Buffer (Modifier Key)
+  - [ ] Query Logging
+- [ ] Ability to quickly interrupt sql
+
+MySQL Editor Features
+----
+
+- [ ] Automatically Add/Remove commas in Select/Set Statements
+- [ ] MySQL func Autocomplete
+- [ ] Date/Time Picker?
