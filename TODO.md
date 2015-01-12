@@ -16,3 +16,4 @@ MySQL Editor Features
 - [ ] Automatically Add/Remove commas in Select/Set Statements
 - [ ] MySQL func Autocomplete
 - [ ] Date/Time Picker?
+- [ ] Automatically reorder out-of-order SQL statementes (Limit <//> group by)
