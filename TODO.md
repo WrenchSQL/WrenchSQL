@@ -17,3 +17,8 @@ MySQL Editor Features
 - [ ] MySQL func Autocomplete
 - [ ] Date/Time Picker?
 - [ ] Automatically reorder out-of-order SQL statementes (Limit <//> group by)
+
+Dataview features:
+----
+
+ - [ ] View column as bar graph (compare values)
