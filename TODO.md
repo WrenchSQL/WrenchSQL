@@ -12,7 +12,20 @@ Sql Client
 
 MySQL Editor Features
 ----
+- [ ] Host transaction restrictive tunnel.
+  
+    WrenchSQL can host and listen for inbound mysql connections. (Possible conifrm inbound connections, via gui)
+    When established WrenchSQL allows a passthough of all mysql commands.
+    Modes:
+    - Regular: Block transaction state-chaning commands, return error.
+    - Allow: Do not block any sql commands.
+    - Whitlist: Only allow approved command stanzas.
+    - Blacklist/Block:  Forbid forbidden command stanzas.
+    - Off: Block all.
+    
+    Purpose:
 
+    > Offer developer method of running non-transactional sql in a monitored transaction such that the WrnchSQL gui can also view changes made by the script and will host the transactional connection for as long as desired.
 - [ ] Automatically Add/Remove commas in Select/Set Statements
 - [ ] MySQL func Autocomplete
 - [ ] Date/Time Picker?
