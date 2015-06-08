@@ -30,6 +30,9 @@ MySQL Editor Features
 - [ ] MySQL func Autocomplete
 - [ ] Date/Time Picker?
 - [ ] Automatically reorder out-of-order SQL statementes (Limit <//> group by)
+- [ ] Automatic FK join autocomplete
+- [ ] Gammer-aware autocorrect `like =` becomes `like`, `selectt` becomes `select`
+- [ ] automatic explain warnings?
 
 Dataview features:
 ----
